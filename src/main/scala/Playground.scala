@@ -14,10 +14,12 @@ object MultiplicationTable {
   }
 
   def getValueAtIndex(x: Int, y: Int, z: Int): Int = {
+    // Simple indexing into nested array, three layers deep
     multiTable(x)(y)(z)
   }
 
   def getValueAtIndexForNDArray[X](t: X, indices: Int*): Int = {
+    // Recursive accessing at index for n-dimensional array
     t match {
       case t: Int => t: Int
       case t: Array[_] => {
